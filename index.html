@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <title>WhatToDoInIndonesia</title>
+</head>
+<body>
+   <header id="main-header" class="flex">
+        <button id="navigation-button">&#9776;</button>
+        <img src="img/logo_bg3.png" alt="Logo What to do in Indonesia" id="logo">
+        <nav>
+            <ul id="primary-navigation" class="flex underline-indicator">
+                <li><a href="index.html"><h5 class="ff-raleway">Home</h5></a></li>
+                <li><a href="diving.html"><h5 class="ff-raleway">Diving</h5></a></li>
+                <li><a href="mountain.html"><h5 class="ff-raleway">Mountain</h5></a></li>
+            </ul>
+        </nav>
+   </header>
+   <div id="hero-page">
+        <div id="hero-page_content" class="container">
+            <h1 class="ff-raleway">we give travel recommendation for extremely local experience</h1>
+        </div>
+   </div>
+
+   <div id="destination" class="grid">
+        <div class="destination_content-wrapper">
+            <img src="img/snorkeling.jpg" alt="snorkeling" >
+            <div id="destination_waterfall" class="destination_content">
+                <h5 class="ff-raleway">I want to explore</h5>
+                <h2 class="ff-raleway">Diving</h2>
+                <button class="underline-indicator" onclick="toPage(1)"><h5 class="ff-raleway">Take Me There</h5></button>
+            </div>
+        </div>
+        <div class="destination_content-wrapper">
+            <img src="img/bromo.jpg" alt="Mountain"style="height: 100%;">
+            <div id="destination_waterfall" class="destination_content">
+                <h5 class="ff-raleway">I want to explore</h5>
+                <h2 class="ff-raleway">Mountain</h2>
+                <button class="underline-indicator" onclick="toPage(2)"><h5 class="ff-raleway">Take Me There</h5></button>
+            </div>
+        </div>
+   </div>
+
+   <div id="recommendation" class="flex">
+        <div id="recommendation_content-wrapper">
+            <div class="recommendation_content container">
+                <div class="recommendation_logo gs_reveal_scale">&#127860</div>
+                <h5 class ="gs_reveal_hor gs_reveal_fromLeft ff-raleway" style="text-align: center;">stay like local</h5>
+                <p class="gs_reveal_ver gs_reveal_fromBottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has 
+                            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div class="recommendation_content container">
+                <div class="recommendation_logo gs_reveal_scale">&#127968</div>
+                <h5 class ="gs_reveal_hor gs_reveal_fromLeft ff-raleway" style="text-align: center;">stay like local</h5>
+                <p class="gs_reveal_ver gs_reveal_fromBottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has 
+                            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div class="recommendation_content container">
+                <div class="recommendation_logo gs_reveal_scale">&#129517</div>   
+                <h5 class ="gs_reveal_hor gs_reveal_fromLeft ff-raleway" style="text-align: center;">stay like local</h5>
+                <p class="gs_reveal_ver gs_reveal_fromBottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+                            text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has 
+                            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        </div>
+        <img src="img/logo_bg3.png" alt="what to do in indo" id="recommendation_logo">
+   </div>
+
+   <div id="trivia" class="container">
+        <h2 class="ff-raleway">Little Trivia About Indonesia</h2>
+        <div id="trivia_content-grid" class="grid">
+            <div class="trivia_content-wrapper">
+                <h4 class="ff-raleway">Rex</h4>
+                <p>Rex is the Mayor of Binaryville and a well-loved peasfefasdfweafsadfwefsafewfsfwfeasfersonality in town. He rose to robotdom from a microprocessor plant on the south side of town, where many famous and influential robots before him were conceived.</p>
+            </div>
+            <div class="trivia_content-wrapper">
+                <h4 class="ff-raleway">Dolores</h4>
+                <p>Dolores robot is a computational genius ASDFASFEWASDFWEFSAwafwefsadfewfasdfwearsdfwho performs calculations for various Binaryville businesses and organizations. In her spare time, Dolores has been noodling on the creation of the perfect web browser that will make all other browsers obsolete.</p>
+            </div>
+            <div class="trivia_content-wrapper">
+                <h4 class="ff-raleway">Bubbles</h4>
+                <p>Bubble Gum robot, or “Bubbles” for short, is from a family of track-footed robots that ¬originated from an experiment melding candy vending machines with robotics in the early 1980s. Bubbles is a favorite of Binaryville, not just because she generously dispenses candy.s</p>
+            </div>
+        </div>
+   </div>
+
+   <footer>
+        <div id="footer" class="grid">
+            <div id="footer_img">
+                <img src="img/logo_bg3.png" alt="">
+            </div>
+            <div id="footer_links">
+                <ul class="flex">
+                    <li><a href="index.html"><h6 class="ff-raleway">Home</h6></a></li>
+                    <li><a href="diving.html"><h6 class="ff-raleway">Diving</h6></a></li>
+                    <li><a href="mountain.html"><h6 class="ff-raleway">Mountain</h6></a></li>
+                </ul>
+            </div>
+            <div id="footer_contact" class="flex">
+                <div class="footer_contact_content-wrapper">
+                    <h6 class="ff-raleway">Call Us</h6>
+                    <p>+62 7658849</p>
+                </div>
+                <div class="footer_contact_content-wrapper">
+                    <h6 class="ff-raleway">Email Us</h6>
+                    <p>hello@whattodoinindo.com</p>
+                </div>
+            </div>
+            <div id="footer_copyright">
+                <p id="copyright">©2021 WhatToDoInIndonesia. All right reserved.</p>
+            </div>
+        </div>
+   </footer>
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+   <script src="index.js"></script>
+   <script src="reveal-animation.js"></script>
+   <script src="navigation.js"></script>
+</body>
+</html>

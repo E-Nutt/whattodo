@@ -1,0 +1,735 @@
+:root{
+
+    /* color */
+    --blue: rgb(93, 107, 178);
+    --accent: #adb0ce;
+
+    /* font-families */
+    --raleway : 'Raleway', sans-serif;
+
+}
+
+h1{
+    font-size: 60px;
+}
+h2{
+    font-size: 45px;
+}
+h3{
+    font-size: 37.5px;
+}
+h4{
+    font-size: 30px;
+}
+h5{
+    font-size: 25px;
+}
+h6{
+    font-size: 20px;
+}
+p{
+    font-size: 18px;
+}
+@media (max-width: 768px) {
+    h1{
+        font-size: 38px;
+    }
+    h2{
+        font-size: 30.4px;
+    }
+    h3{
+        font-size: 26.6px;
+    }
+    h4{
+        font-size: 22.8px;
+    }
+    h5{
+        font-size: 19px;
+    }
+    h6{
+        font-size: 16px;
+    }
+    p{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1024px) {
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 32px;
+    }
+    h3{
+        font-size: 28px;
+    }
+    h4{
+        font-size: 24px;
+    }
+    h5{
+        font-size: 20px;
+    }
+    h6{
+        font-size: 16px;
+    }
+    p{
+        font-size: 18px;
+    }
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture {
+    margin: 0;
+}
+/* RESET PARAGRAPH */
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: black;
+}
+/* SET UP THE BODY */
+
+body {
+    line-height: 1.5;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------
+--------------- UTILITY CLASSES ----------
+------------------------------------------*/
+
+/* GENERAL */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.container {
+    max-width: 90rem;
+    padding-inline: 1rem;
+    margin-inline: auto;
+    overflow: hidden;
+}
+.margin-top{
+    margin-top: var(--margin-top, 2rem);
+}
+.margin-bottom{
+    margin-bottom: var(--margin-bottom, 2rem);
+}
+.flow-ver > *:not(:first-child) {
+    margin-top: 1rem;
+}
+
+@media (min-width: 50em) {
+    .flow-ver > *:not(:first-child) {
+        margin-top: 2rem;
+    }
+}
+@media (min-width: 60em) {
+    .flow-ver > *:not(:first-child) {
+        margin-top: 3rem;
+    }
+    .margin-top{
+        margin-top: var(--margin-top, 6rem);
+    }
+    .margin-bottom{
+        margin-bottom: var(--margin-bottom, 7rem);
+    }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/*  COLOR  */
+
+.bg-blue {background-color: var(--blue);}
+.text-white {color: white;}
+
+/*  TYPOGRAPHY  */
+.ff-raleway{
+    font-family: var(--raleway);
+}
+
+.fw100{font-weight: 100;}
+.fw200{font-weight: 200;}
+.fw300{font-weight: 300;}
+.fw400{font-weight: 400;}
+.fw500{font-weight: 500;}
+.fw600{font-weight: 600;}
+.fw700{font-weight: 700;}
+.fw800{font-weight: 800;}
+
+/*  UNDERLINE INDICATOR  */
+
+.underline-indicator {
+    position: relative;
+  }
+  .underline-indicator ::after{
+      content: '';
+      display: block;
+      width: 0;
+      height: 1.2px;
+      background: white;
+      transition: width .3s;
+  }
+  .underline-indicator :hover::after {
+      width: 100%;
+  }
+  
+  .underline-indicator .active{
+      border-bottom: 2px solid black;
+  }
+
+
+/* ---------------------------------------
+--------------- COMPONENTS ---------------
+------------------------------------------*/
+
+/*----------------NAVIGATION-------------*/
+
+#main-header{
+    justify-content: space-between;
+    align-items: center;
+    padding:1rem 2rem;
+    background-color: salmon;
+    z-index: 600;
+    width: 100%;
+    position: fixed;
+}
+nav{
+    position: static;
+    width: 40%;
+}
+#logo{
+    width: 6rem;
+}
+#navigation-button{
+    height: max-content;
+    font-size: 2rem;
+    display: none;
+}
+#primary-navigation{
+    justify-content: space-between;
+    background-color: salmon;
+}
+
+@media (max-width: 1024px) {
+   #primary-navigation{
+    position: absolute;
+    transform: translate(-1rem,2rem);
+    flex-direction: column;
+    width: 100vw;
+    padding: 0 2rem;
+    height: 10rem;
+    justify-content: flex-start;
+    z-index: 400;
+    overflow-y:hidden ;
+   }
+   nav{
+    position: absolute;
+   }
+
+   #navigation-button{
+    display: block;
+   }
+   #logo{
+    width: 5rem;
+    align-self: flex-end;
+   }
+   #main-header{
+    padding:1rem;
+}
+} 
+
+/*----------------FOOTER-------------*/
+#footer{
+    grid-auto-columns: 1fr;
+    place-items: center;
+    background-color: salmon;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+#footer_img img{
+    width: 10rem;
+}
+#footer_links, #footer_contact{
+    width: 30%;
+}
+#footer_links ul{
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+#footer_contact{
+    text-align: center;
+    justify-content: space-between;
+}
+@media (max-width: 768px) {
+    #footer_links, #footer_contact{
+        width: 100%;
+    }
+} 
+@media (min-width: 769px) {
+    #footer_links, #footer_contact{
+        width: 60%;
+    }
+} 
+
+/* ---------------------------------------
+--------------- INDEX --------------------
+------------------------------------------*/
+
+/*----------------HERO PAGE-------------*/
+#hero-page{
+    width: 100%;
+    height: 100vh;
+    padding-top: 20rem;
+    background-image: url("img/biking.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+#hero-page_content{
+    > h1{
+        width: 60%;
+        color: white;
+        background-color: rgb(250, 128, 114,70%);
+    }
+}
+
+@media (max-width: 1024px) {
+    #hero-page{
+        height: 80vh;
+        padding-top: 10rem;
+    }
+    #hero-page_content{
+        > h1{
+            width: 100%;
+            padding: 1rem;
+        }
+    }
+    
+} 
+
+/*----------------DESTINATION-------------*/
+#destination{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0rem;
+}
+.destination_content-wrapper{
+    position: relative;
+   
+    >img{
+        position: relative;
+        filter: brightness(0.5)
+    };
+}
+.destination_content{
+    position: absolute;
+    top: 1rem;
+    color: white;
+    width: 100%;
+    height: 90%;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    >button{
+        color: white;
+    }
+    >h2{
+        color: salmon;
+        margin: 1rem 0;
+        font-weight: 700;
+    }
+}
+@media (max-width: 1024px) {
+    #destination{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+/*----------------RECOMMENDATION-------------*/
+
+#recommendation{
+    padding-top: 10rem;
+}
+#recommendation_logo{
+    width:25rem;
+    height: 20rem;
+    margin-left: 5rem;
+    justify-self: flex-end;
+}
+#recommendation_content-wrapper{
+    width: 50%;
+}
+.recommendation_content{
+    margin-bottom: 10rem;
+    >.recommendation_logo{
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+   #recommendation_logo{
+    display: none;
+   }
+   #recommendation_content-wrapper{
+    width: 100%;
+}
+}
+
+/*----------------TRIVIA-------------*/
+#trivia{
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    height: 25rem;
+    & h2{
+        margin-bottom: 2rem;
+    }
+}
+@media (max-width: 768px) {
+    #trivia{
+        height: 55rem;
+    }
+ }
+#trivia_content-grid{
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    word-wrap: break-word;
+    gap: 1.5rem;
+}
+.trivia_content-wrapper{
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    & h4{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+}
+
+/* ---------------------------------------
+--------------- MOUNTAIN -----------------
+------------------------------------------*/
+
+/*----------------HERO-------------*/
+
+#mountain-hero{
+    width: 100%;
+    max-height: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url('img/mountain1.jpg');
+    background-size: cover;
+    color: white;
+}
+.mountain_hero-pic{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: bottom;
+}
+#mountain_hero-wrapper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.mountain_hero-content{
+    width: 100%;
+}
+.mountain_hero-text{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    top: 33rem;
+}
+.mountain_hero-text h4{
+    cursor: pointer;
+}
+#mountain-hero h3{
+    position: absolute;
+    top: 10rem;
+    left: 5rem;
+}
+
+@media (max-width: 835px) {
+    #mountain-hero{
+        height: 90vh;
+    }
+   #mountain_hero-wrapper{
+    flex-direction: column;
+   }
+   .mountain_hero-pic{
+    display: none;
+}
+   #mountain-hero h3{
+    top: 10rem;
+    left: 1rem;
+}
+    .mountain_hero-text{
+    top: 25rem;
+    padding-top: 2rem;
+}
+}
+
+@media (max-width: 378px) {
+    #mountain-hero h3{
+        top: 7rem;
+    }
+    .mountain_hero-text{
+        text-align: left;
+        top: 19rem;
+        padding-left: 1rem;
+        padding-top: 1rem;
+    }
+}
+
+/*----------------MOUNTAIN INFORMATION-------------*/
+
+.mountain-info_content-wrapper{
+    flex-direction: column;
+    margin: 3rem 0;
+}
+.mountain-info_text-wrapper {
+    background-color: rgb(250, 102, 86);
+    border-radius: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+.mountain-info_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+    flex-direction: column;
+}
+.mountain-info_right-content{
+    gap: 3rem;
+}
+.mountain-info_right-content{
+    grid-template-rows: max-content 100px max-content;
+    align-items: stretch;
+    justify-items: center;
+
+}
+.btn-mountain{
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+.btn-mountain button{
+    font-size: 3rem;
+    color: salmon;
+    width: 12%;
+    transition: all 0.3s ease;
+}
+.btn-mountain button:hover{
+    background-color: salmon;
+    color: white;
+    border-radius: 1010%;
+}
+@media (min-width: 1024px) {
+    .mountain-info_content-wrapper{
+        flex-direction: row;
+    }
+    .mountain-info_content-wrapper img{
+        width: 70%;
+    }
+    .mountain-info_right-content{
+    place-content: center;
+    grid-template-rows: 30px .75fr 40px;
+    align-items: stretch;
+    justify-items: center;
+    }
+}
+
+/* ---------------------------------------
+--------------- DIVING -----------------
+------------------------------------------*/
+
+/*----------------DIVING HERO-------------*/
+#diving-hero{
+    width: 100%;
+    height: 70vh;
+    background-image: url('img/snorkeling.jpg');
+    background-size: cover;
+    background-position: center center;
+    place-content: center;
+    text-align: center;
+    color: salmon;
+}
+#hero-title{
+    place-self: center;
+    text-align: center;
+}
+#hero-title-move{
+    height: 50px;
+    width: 200px;
+    overflow: hidden;
+    position: relative;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.hero-title-anim{
+    position: absolute;
+    text-align: center;
+    
+
+}
+@media (min-width: 768px) {
+    #diving-hero{
+        height: 100vh;
+        grid-template-columns: 190px 270px;
+        gap: 0.1rem;
+        
+    }
+    #hero-title-move{
+        height: 100px;
+        width: 270px;
+    }
+}
+
+/*----------------DIVING SPOT-------------*/
+#diving-spot{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 0rem 1rem;
+    background-color: blanchedalmond;
+    overflow: hidden;
+}
+#diving-spot-container{
+    width: 240%;
+    margin-bottom: 4rem;
+}
+#diving-spot h2{
+    margin: 3rem 0rem 3rem 0rem;
+    text-align: center;
+}
+.diving-spot-wrapper{
+    height: 50vh;
+    width: 100%; 
+    border: 2px solid red;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    place-content: center;   
+}
+.diving-spot-title{
+    color: white;
+}
+#alor{
+    background-image: url("img/snorkeling.jpg");
+    margin-left: 1rem;
+}
+#bali{
+    background-image: url("img/diving1.jpg");
+}
+#rajaampat{
+    background-image: url("img/diving2.jpg");
+}
+#diving-btn-container{
+    position: absolute;
+    width: 95%;
+    justify-content: space-between;
+    color: white;
+    top: 67rem;
+    z-index: 4;
+}
+#diving-btn-container button{
+    color: white;
+    font-size: 2rem;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 50px;
+    transition: all 0.3s ease-out;
+
+}
+#diving-btn-container button:hover{
+    background-color: salmon;
+    transform: scale(1.25);
+}
+
+/* @media (max-width: 768px) {
+   
+}
+
+@media (max-width: 1024px) {
+    
+} */
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Diving</title>
+</head>
+<body>
+    <header id="main-header" class="flex">
+        <button id="navigation-button">&#9776;</button>
+        <img src="img/logo_bg3.png" alt="Logo What to do in Indonesia" id="logo">
+        <nav>
+            <ul id="primary-navigation" class="flex underline-indicator">
+                <li><a href="index.html"><h5 class="ff-raleway">Home</h5></a></li>
+                <li><a href="diving.html"><h5 class="ff-raleway">Diving</h5></a></li>
+                <li><a href="mountain.html"><h5 class="ff-raleway">Mountain</h5></a></li>
+            </ul>
+        </nav>
+   </header>
+   <div id="diving-hero" class="grid">
+        <h2 class="ff-raleway" id="hero-title">Discover</h2>
+        <div id="hero-title-move" class="flex">
+            <h2 class="ff-raleway hero-title-anim">Untouch</h2>
+            <h2 class="ff-raleway hero-title-anim">Unpopular</h2>
+        </div>
+   </div>
+   <div id="diving-spot" class="">
+        <div id="diving-btn-container" class="flex">
+            <button id="diving-btn-left">&#11013;</button>
+            <button id="diving-btn-right">&#10145;</button>
+        </div>
+        <h2 class="ff-raleway">Check out our Spots</h2>
+        <div id="diving-spot-container" class="flex">
+            <div class="diving-spot-wrapper grid" id="alor">
+                <h3 class="ff-raleway diving-spot-title" id="bali-title">Alor</h3>
+            </div>
+            <div class="diving-spot-wrapper grid" id="bali">
+                <h3 class="ff-raleway diving-spot-title" id="bali-title">Bali</h3>
+            </div>
+            <div class="diving-spot-wrapper grid" id="rajaampat">
+                <h3 class="ff-raleway diving-spot-title" id="bali-title">Raja Ampat</h3>
+            </div>
+        </div>
+   </div>
+    <footer>
+        <div id="footer" class="grid">
+            <div id="footer_img">
+                <img src="img/logo_bg3.png" alt="">
+            </div>
+            <div id="footer_links">
+                <ul class="flex">
+                    <li><a href="index.html"><h6 class="ff-raleway">Home</h6></a></li>
+                    <li><a href="diving.html"><h6 class="ff-raleway">Diving</h6></a></li>
+                    <li><a href="mountain.html"><h6 class="ff-raleway">Mountain</h6></a></li>
+                </ul>
+            </div>
+            <div id="footer_contact" class="flex">
+                <div class="footer_contact_content-wrapper">
+                    <h6 class="ff-raleway">Call Us</h6>
+                    <p>+62 7658849</p>
+                </div>
+                <div class="footer_contact_content-wrapper">
+                    <h6 class="ff-raleway">Email Us</h6>
+                    <p>hello@whattodoinindo.com</p>
+                </div>
+            </div>
+            <div id="footer_copyright">
+                <p id="copyright">©2021 WhatToDoInIndonesia. All right reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="navigation.js"></script>
+    <script src="reveal-animation.js"></script>
+    <script src="diving.js"></script>
+</body>
+</html>
