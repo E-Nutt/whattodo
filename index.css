@@ -561,7 +561,7 @@ nav{
 
 .mountain-info_content-wrapper{
     flex-direction: column;
-    margin: 3rem 0;
+    margin: 5rem 0;
 }
 .mountain-info_text-wrapper {
     background-color: rgb(250, 102, 86);
@@ -602,7 +602,6 @@ nav{
 .btn-mountain button:hover{
     background-color: salmon;
     color: white;
-    border-radius: 1010%;
 }
 @media (min-width: 1024px) {
     .mountain-info_content-wrapper{
